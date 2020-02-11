@@ -131,8 +131,10 @@ module UserAgentParser
         brand.strip!
       end
 
-      model&.strip!
-
+#       model&.strip!
+      if model
+        model.strip!
+      end
       Device.new(family.strip, model, brand)
     end
 
